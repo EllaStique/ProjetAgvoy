@@ -1,0 +1,62 @@
+{% extends 'base.html.twig' %}
+
+{% block header %}
+            <header>
+                <div class="navbar navbar-default navbar-static-top" role="navigation">
+                    <div class="container">
+                        <div class="navbar-header">
+                            <a class="navbar-brand" href="{{ path('accueil') }}">
+                                <h5>Accueil</h5>
+                            </a>
+
+                            <button type="button" class="navbar-toggle"
+                                    data-toggle="collapse"
+                                    data-target=".navbar-collapse">
+                                <span class="sr-only">Toggle navigation</span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+                        </div>
+                        <div class="navbar-collapse collapse">
+                            <ul class="nav navbar-nav">
+
+                                {% block header_navigation_links %}
+                                    
+                                    <li>
+                                        <a href="{{ path('circuit_index') }}"><h5>Nos voyages</h5></a>
+                                    </li>
+                                    <li>
+                                        <a href="{{ path('contact') }}"><h5>Contact</h5></a>
+                                    </li>
+                                    <li>
+                                        <a href="{{ path('panier') }}"><h5>Mes réservations</h5></a>
+                                    </li>
+
+
+				 {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+                                    
+                                    <li>
+                                       <a href="{{ path('circuit_brouillon') }}"><h5>Voyages non publiés</h5></a>
+	                             </li>
+                               {% endif %}
+                                    <li>
+                                         <a href="{{ path('user_register') }}"><h5>S'enregistrer</h5></a>
+                                    </li>
+                                    <li>
+                                         <a href="{{ path("user_login") }}"><h5>Se connecter</h5></a>
+                                    </li>
+                                    <li>
+                                         <a href="{{ path("fos_user_security_logout") }}"><h5>Logout</h5></a>
+                                    </li>
+                                
+                                    
+                                {% endblock %}
+
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </header>
+{% endblock %}
+        

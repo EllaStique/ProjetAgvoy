@@ -1,0 +1,38 @@
+{% extends 'agvoybase.html.twig' %}
+
+{% block main %}
+    <h3><center>Bienvenue dans l'agence TSP </center></h3><br>
+   
+	
+	<div id="photos" class="col-sm-offset-3 col-md-offset-3 col-lg-offset-3 col-xs-offset-3 col-xs-6 col-sm-6 col-md-6 col-lg-6">
+			Défilé photos
+			Praesent id fermentum lorem. Ut est lorem, fringilla at accumsan nec, euismod at nunc. Aenean mattis sollicitudin mattis. Nullam pulvinar vestibulum bibendum. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Fusce nulla purus, gravida ac interdum ut, blandit eget ex. Duis a luctus dolor.
+
+Integer auctor massa maximus nulla scelerisque accumsan. Aliquam ac malesuada ex. Pellentesque tortor magna, vulputate eu vulputate ut, venenatis ac lectus. Praesent ut lacinia sem. Mauris a lectus eget felis mollis feugiat. Quisque efficitur, mi ut semper pulvinar, urna urna blandit massa, eget tincidunt augue nulla vitae est.
+	<br><br><br>
+	</div>
+	
+	
+	
+	<div id="apropos" class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+			<p align="justify">Spécialisés depuis plus de 50 ans dans l'organisation de voyages, nous vous proposons un choix innonbrable de destinations. Que ce soient vos désirs, nous nous engageons à rendre vos vancances innoubliables.  </p>
+
+	<br><br><center><a href="{{ path('contact') }}"><button type="button" class="btn btn-info">Nous contacter</button></a></center>
+	</div>
+	
+	<div id="nouveautes" class=" col-sm-offset-1 col-md-offset-1 col-lg-offset-1 col-xs-offset-1 col-xs-5 col-sm-5 col-md-5 col-lg-5">
+			Voici tous les voyages que nous vous proposons <br><br>
+
+
+			{% for circuit in circuits %}
+			 
+		            <tr>
+		                <td><a href="{{ path('circuit_show', { 'id': circuit.id }) }}">{{ circuit.description }} : <br></a></td>
+		                <td><p align="justify">Venez découvrir {{ circuit.villeDepart }}, pendant {{ circuit.dureeCircuit }} jours de voyage à travers le {{ circuit.paysDepart }}, pour terminer à {{ circuit.villeArrivee }}.</p></td>
+		            </tr>
+            	
+          {%  endfor %}      
+          </div>
+    
+    
+{% endblock %} {# main #}

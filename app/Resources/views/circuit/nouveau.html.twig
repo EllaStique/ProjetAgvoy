@@ -1,0 +1,12 @@
+{% extends 'agvoybase.html.twig' %}
+
+{% block main %}
+    <h3>Ajout d'un voyage:</h3><br>
+    
+            {{ form_start(circuitform) }}
+            {{ form_widget(circuitform) }}
+            {{ form_end(circuitform) }}
+            
+<p> Vous allez être redirigé vers la liste des circuits non validés où vous pourrez choisir les étapes du voyage, ainsi que la programmation </p>
+    
+{% endblock %} {# main #}

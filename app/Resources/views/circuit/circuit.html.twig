@@ -1,0 +1,51 @@
+{% extends 'agvoybase.html.twig' %}
+
+{% block main %}
+    <h3>Nos circuits<br><br></h3>
+    <h5>Voici un récapitulatif de l'ensemble des circuits qui vous sont proposés<br><br></h5>
+    {% if utilisateur == 0 %}
+    <p> Pour réserver un voyage, merci de commencer par vous connecter.<br> </p>
+    {% endif %}
+
+    <table>
+        <thead>
+            <tr>
+                <th>Description</th>
+                <th>Pays de départ</th>
+                <th>Ville de départ</th>
+                <th>Ville d'arrivée</th>
+                <th>Duree du circuit</th>
+                <th> </th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for circuit in circuits %}
+            <tr>
+              
+                <td>{{ circuit.description }}</td>
+                <td>{{ circuit.paysDepart }}</td>
+                <td>{{ circuit.villeDepart }}</td>
+                <td>{{ circuit.villeArrivee }}</td>
+                <td>{{ circuit.dureeCircuit }}</td>
+                <td>
+                    <a href="{{ path('circuit_show', { 'id': circuit.id }) }}">En savoir plus sur le voyage</a>
+                </td>
+                <td>
+                    {% if utilisateur == 1 %}
+                        <a href="{{ path('reserver', { 'id': circuit.id })}}"><button class="btn btn-warning">Réserver ce voyage</button></a>
+                    {% elseif utilisateur == 2 %}
+                        <a href="{{ path('reserver', { 'id': circuit.id })}}"><button class="btn btn-warning">Modifier ce voyage</button></a>
+                    {% endif %}
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+     {% if utilisateur == 2 %}
+    <p><a href="{{ path('nouveau_voyage')}}"><button class="btn btn-info">Ajouter un nouveau circuit</button></a></p>
+    {% endif %}
+
+    {% if utilisateur == 0 %}
+    <p> <br> Pour réserver un voyage, merci de commencer par vous connecter.</p>
+    {% endif %}
+{% endblock %} 
