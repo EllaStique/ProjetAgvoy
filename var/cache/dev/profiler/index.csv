@@ -6,3 +6,11 @@ dd18e6,127.0.0.1,GET,http://localhost:8000/bundles/framework/css/exception.css,1
 fb8b68,127.0.0.1,GET,http://localhost:8000/bundles/framework/css/exception.css,1476738135,,404
 9a72c5,127.0.0.1,GET,http://localhost:8000/bundles/framework/css/body.css,1476738136,36d12d,200
 36d12d,127.0.0.1,GET,http://localhost:8000/bundles/framework/css/body.css,1476738136,,404
+69a582,127.0.0.1,GET,http://localhost:8000/nouveau,1476738808,7164c1,200
+7164c1,127.0.0.1,GET,http://localhost:8000/nouveau,1476738808,,500
+48a013,127.0.0.1,GET,http://localhost:8000/bundles/framework/css/structure.css,1476738809,41e32e,200
+41e32e,127.0.0.1,GET,http://localhost:8000/bundles/framework/css/structure.css,1476738809,,404
+1ef4a1,127.0.0.1,GET,http://localhost:8000/bundles/framework/css/body.css,1476738809,6d57af,200
+6d57af,127.0.0.1,GET,http://localhost:8000/bundles/framework/css/body.css,1476738809,,404
+fce63f,127.0.0.1,GET,http://localhost:8000/bundles/framework/css/exception.css,1476738809,f1e2c0,200
+f1e2c0,127.0.0.1,GET,http://localhost:8000/bundles/framework/css/exception.css,1476738809,,404
